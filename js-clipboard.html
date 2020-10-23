@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Clipboard</title>
+</head>
+<body>
+  <input id="inputfield" type="text" value="Kaka" placeholder="text to be copied" />
+  <button onclick="copy(); return false;">Copy</button>
+  <script>
+    function copy() {
+      let userInput = document.getElementById('inputfield').value
+      navigator.clipboard
+        .writeText(userInput)
+        .then(() => {
+          console.log('Text copied to clipboard')
+        })
+        .catch((err) => {
+          console.error('Could not copy text: ', err)
+        })
+    }
+  </script>
+</body>
+</html>
