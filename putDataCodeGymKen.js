@@ -16,7 +16,6 @@ if (title.search("[Bài tập]") !== -1) {
   time_estimated = "1";
   time_estimated_type = "hours";
 }
-// POST: https://ken-backend.codegym.vn/boards/6210/tasks
 let data = {
   "title": title,
   "description": null,
@@ -31,7 +30,6 @@ let data = {
 
 
 
-// PUT https://ken-backend.codegym.vn/boards/6210/tasks/1016652
 application/json
 // {
 //   "title": "[Bài đọc] Mảng nhiều chiều",
@@ -49,3 +47,26 @@ application/json
 //   "date_started": "2020-10-06T17:00:00.000Z",
 //   "date_due": "2020-10-06T17:00:00.000Z"
 // }
+
+
+
+
+
+fetch("URL", {
+  method: "POST",
+  body: JSON.stringify({
+    "title": "Demo Git 2",
+    "description": "Đây là mô tả",
+    "time_estimated": 30,
+    "color": "ff9f1a",
+    "swimlane_id": 27503,
+    "column_id": 28047,
+    "position": 0,
+    "board_id": "5513",
+    "time_estimated_type": "minutes"
+}),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+	"Authorization": 'Bearer <token>'
+  }
+});
